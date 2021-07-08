@@ -338,7 +338,7 @@ class DisTube extends EventEmitter {
     string: string,
     options: { type?: "video" | "playlist"; limit?: number; safeSearch?: boolean; retried?: boolean } = {},
   ): Promise<Array<SearchResult>> {
-    const opts = Object.assign({ type: "video", limit: 10, safeSearch: false }, options);
+    const opts = Object.assign({ type: "video", limit: 5, safeSearch: false }, options);
     if (typeof opts.type !== "string" || !["video", "playlist"].includes(opts.type)) {
       throw new Error("options.type must be 'video' or 'playlist'.");
     }
