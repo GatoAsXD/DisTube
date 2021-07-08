@@ -343,7 +343,7 @@ class DisTube extends EventEmitter {
    */
   async search(string, retried = false) {
     try {
-      let search = await ytsr(string, { limit: 15 });
+      let search = await ytsr(string, { limit: 5 });
       let results = search.items.map(i => new SearchResult(i));
       if (results.length === 0) throw Error("No result!");
       return results;
